@@ -1,4 +1,4 @@
-import { circle2 } from "../circles/circle_2.js"
+import { lineObj } from "../circles/circle_2.js"
 import { moveLine } from "../functions/func.js"
 
 let btnStartLine = document.createElement('div')
@@ -8,11 +8,13 @@ btnStartLine.style.left = '600px'
 btnStartLine.textContent = 'Start'
 let arrIntervals = []
 
+
+
 btnStartLine.addEventListener('click', () => {
-    arrIntervals.push(
-        moveLine(circle2)
-        )
+   console.log(lineObj)
+    arrIntervals.push(moveLine().interval)
 })
+
 
 export {
     btnStartLine,arrIntervals

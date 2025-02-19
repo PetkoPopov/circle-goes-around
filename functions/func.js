@@ -1,3 +1,4 @@
+import { lineObj } from "../circles/circle_2.js"
 import { speed, radius, x, y, delta } from "../constants.js"
 
 function moveCircle(circle) {
@@ -13,19 +14,24 @@ function moveCircle(circle) {
     return movement
 }
 
-function moveLine(circle) {
-    let countN = 0
-    let x22 = 0
-    let y22 = 0
+function moveLine() {
+    
+    let x22 = lineObj.coorX
+    let y22 = lineObj.coorY
 
-    let  move = setInterval(() => {
-        countN++
-        x22 = countN * delta * 20
-        y22 = countN * delta * 20
-        circle.style.left = y22 + 'px'
-        circle.style.top = x22 + 'px'
+    let move = setInterval(() => {
+        lineObj.count++
+        x22 = lineObj.count * delta * 20
+        y22 = lineObj.count * delta * 20
+        lineObj.circle.style.left = y22 + 'px'
+        lineObj.circle.style.top  = x22 + 'px'
+        lineObj.coorX = x22
+        lineObj.coorY = y22
+        
     }, speed)
-return move
+    lineObj.interval = move
+    
+    return lineObj
 }
 export {
     moveCircle,
