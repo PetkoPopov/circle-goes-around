@@ -10,6 +10,12 @@ let lineObj = {
     name:"LINE",
     radius: () => {
         return Math.floor(Math.sqrt(lineObj.coorX**2+lineObj.coorY**2))
+    },
+    ctrRadius:()=>{
+        
+            return Math.floor(Math.sqrt((lineObj.coorX - 200) ** 2 + lineObj.coorY ** 2))
+
+        
     }
 }
 

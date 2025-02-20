@@ -7,7 +7,7 @@ btnStop.style.left = '350px'
 btnStop.style.backgroundColor = 'red'
 btnStop.textContent = 'Stop'
 btnStop.addEventListener('click', () => {
-    console.log(circleObj.radius())
+    console.log(circleObj.radius(), circleObj.ctrRadius())
     clearInterval(moveCircleInterval[0])
     moveCircleInterval.shift()
 })

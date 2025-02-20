@@ -16,7 +16,11 @@ var circleObj ={
     radius:()=>{
        let res =  Math.floor(Math.sqrt(circleObj.coorX**2 + circleObj.coorY**2))
         return res
-        }
+        },
+    ctrRadius:()=>{
+        return Math.floor(Math.sqrt((circleObj.coorX-200) ** 2 + circleObj.coorY ** 2))
+
+    }
 
 }
 
