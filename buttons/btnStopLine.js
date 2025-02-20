@@ -8,7 +8,7 @@ btnStopLine.style.left = '750px'
 btnStopLine.textContent = 'Stop'
 
 btnStopLine.addEventListener('click',()=>{
-    console.log(lineObj)
+    console.log(lineObj.radius())
     clearInterval(arrIntervals[0])
     arrIntervals.shift()
 })

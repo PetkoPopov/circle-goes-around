@@ -11,7 +11,7 @@ let arrIntervals = []
 
 
 btnStartLine.addEventListener('click', () => {
-   console.log(lineObj)
+
     arrIntervals.push(moveLine().interval)
 })
 

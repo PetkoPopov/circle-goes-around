@@ -6,7 +6,11 @@ let lineObj = {
     circle: circle2,
     coorX: 0,
     coorY: 0,
-    count:0
+    count:0,
+    name:"LINE",
+    radius: () => {
+        return Math.floor(Math.sqrt(lineObj.coorX**2+lineObj.coorY**2))
+    }
 }
 
 export {
