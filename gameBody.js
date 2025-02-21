@@ -1,11 +1,13 @@
 import { btnStart } from "./buttons/btnStart.js"
-import { btnStartLine } from "./buttons/btnStartLine.js"
+import { arrIntervals, btnStartLine } from "./buttons/btnStartLine.js"
 import { btnStop } from "./buttons/btnStop.js"
 import { lineObj } from "./circles/circle_2.js"
 import { circleObj } from "./circles/circle_1.js"
 import { btnStopLine } from "./buttons/btnStopLine.js"
+import { body, moveCircleInterval } from "./constants.js"
+import { moveCircle } from "./functions/func.js"
 
-let body = document.getElementsByTagName('body')[0]
+
 
 body.appendChild(lineObj.circle)
 body.appendChild(circleObj.circle)

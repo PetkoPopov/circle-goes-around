@@ -1,5 +1,7 @@
+import { circleObj } from "../circles/circle_1.js"
 import { lineObj } from "../circles/circle_2.js"
-import { moveLine } from "../functions/func.js"
+import { moveCircleInterval } from "../constants.js"
+import { moveCircle, moveLine } from "../functions/func.js"
 
 let btnStartLine = document.createElement('div')
 btnStartLine.setAttribute('class', 'btn')
@@ -11,11 +13,12 @@ let arrIntervals = []
 
 
 btnStartLine.addEventListener('click', () => {
-
+   
     arrIntervals.push(moveLine().interval)
+    
 })
 
 
 export {
-    btnStartLine,arrIntervals
+    btnStartLine, arrIntervals
 }
