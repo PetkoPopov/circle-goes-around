@@ -15,7 +15,12 @@ btnStart.addEventListener('click', () => {
         circle_.setAttribute('class', 'big-circle')
         circle_.style.left  = (x + radius * Math.cos(tau * delta) )+'px'
         circle_.style.top   = (y + radius * Math.sin(tau * delta) )+'px'
+        let circleLine = document.createElement('div')
+        circleLine.setAttribute('class','big-circle')
+        circleLine.style.top = tau*5+'px'
+        circleLine.style.left= tau*5+'px'
         body.appendChild(circle_)
+        body.appendChild(circleLine)
     }
 
 })

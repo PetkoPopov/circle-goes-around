@@ -1,24 +1,24 @@
 import { lineObj } from "../circles/circle_2.js"
 import { circleObj } from "../circles/circle_1.js"
-import { speed, radius, x, y, delta, speedLine, moveCircleInterval } from "../constants.js"
+import { speed, radius, x, y, delta, speedLine, moveCircleInterval, circleSize } from "../constants.js"
 import { arrIntervals } from "../buttons/btnStartLine.js"
 
 function moveCircle() {
 
 
     let movement = setInterval(() => {
-        circleObj.coorX = y + radius * Math.cos(circleObj.n * delta)
-        circleObj.coorY = x + radius * Math.sin(circleObj.n * delta)
+        circleObj.coorX = y + radius * Math.cos(circleObj.n * delta * 180 / Math.PI)
+        circleObj.coorY = x + radius * Math.sin(circleObj.n * delta * 180 / Math.PI)
         circleObj.n++
         circleObj.circle.style.top = circleObj.coorY + 'px'
         circleObj.circle.style.left = circleObj.coorX + 'px'
+        console.log(circleObj.n)
     }, speed)
-    circleObj.interval = movement
     return circleObj
 }
 
 function moveLine() {
-    
+
     let x22 = lineObj.coorX
     let y22 = lineObj.coorY
 
@@ -30,18 +30,18 @@ function moveLine() {
         lineObj.circle.style.top = x22 + 'px'
         lineObj.coorX = x22
         lineObj.coorY = y22
-        
-        if (lineObj.radius() <= 197 && lineObj.radius() + 20 > 197) {
-               clearInterval(arrIntervals[0])
-               arrIntervals.shift()
-               circleObj.coorX=lineObj.coorX
-               circleObj.coorY=lineObj.coorY
-               moveCircleInterval.push(moveCircle().interval)
-           }
 
-    }, speed)
+        if (lineObj.radius() <= 205 && lineObj.radius() + circleSize / 10 > 205) {
+            clearInterval(arrIntervals[0])
+            arrIntervals.shift()
+            let cosinus = (x - lineObj.coorX) / radius
+            circleObj.n = (Math.PI*(Math.acos(cosinus)+Math.PI)) / (delta*180)
+            moveCircleInterval.push(moveCircle().interval)
+        }
+
+    }, speedLine)
     lineObj.interval = move
-  
+
     return lineObj
 }
 export {

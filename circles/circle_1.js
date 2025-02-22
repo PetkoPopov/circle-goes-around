@@ -1,10 +1,11 @@
-import { speed,radius,x,y,delta } from "../constants.js"
+import { speed,radius,x,y,delta, circleSize } from "../constants.js"
 
 
 let circle = document.createElement('div')
 circle.setAttribute('class', 'circle')
 circle.style.backgroundColor = 'red'
-
+circle.style.width  = circleSize +'px'
+circle.style.height = circleSize+'px'
 circle.style.top = y + 'px'
 circle.style.left = x + 'px'
 var circleObj ={
